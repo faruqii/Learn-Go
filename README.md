@@ -6,4 +6,5 @@
 - pointer
 - array
 - error handling
+- concurency
 
