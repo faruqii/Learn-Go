@@ -1,5 +1,3 @@
-BASIC GO
-
 ## Basic Programming w/ Go
 - Conditional
 - function
