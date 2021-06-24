@@ -9,6 +9,6 @@ type Person struct {
 
 func main() {
 	
-	p1 := Person{"Cassandra","SI-44-04","Jakarta",19,1204}
+	p1 := Person{"Faruqi","SI-44-04","Jakarta",19,1204}
 	fmt.Println(p1)
 }
