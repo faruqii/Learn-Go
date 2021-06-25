@@ -1,5 +1,5 @@
 ## Basic Programming w/ Go
-- Conditional
+- conditional
 - function
 - array
 - struct
