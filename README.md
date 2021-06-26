@@ -4,7 +4,6 @@
 - array
 - struct
 - pointer
-- array
 - error handling
 - concurency
 
