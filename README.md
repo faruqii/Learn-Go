@@ -6,4 +6,5 @@
 - pointer
 - error handling
 - concurency
+- data structure
 
