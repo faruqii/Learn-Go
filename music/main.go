@@ -90,8 +90,10 @@ func (p *Playlist) print() {
 	}
 	
 	current := p.head
+	idx := 1
 	for current != nil {
-		fmt.Println(current.Title, " by ", current.Artist, " from ", current.Album)
+		fmt.Println("Song ", idx, ": ", current.Title, " by ", current.Artist, " from ", current.Album)
+		idx++
 		current = current.next
 	}
 }
@@ -127,50 +129,15 @@ func (p *Playlist) removeSong(title string) {
 // main function
 func main() {
 	playlist := &Playlist{}
-	fmt.Println("Welcome to the Go Playlist")
-	fmt.Println("==========================")
-	fmt.Println("1. Add a song")
-	fmt.Println("2. Play current song")
-	fmt.Println("3. Play next song")
-	fmt.Println("4. Play previous song")
-	fmt.Println("5. Print playlist")
-	fmt.Println("6. Remove song")
-	fmt.Println("7. Exit")
-	fmt.Println("==========================")
-	fmt.Print("Enter your choice: ")
-	var choice int
-	fmt.Scanf("%d", &choice)
-	for {
-		if choice == 1 {
-			title := ""
-			artist := ""
-			album := ""
-			fmt.Print("Enter song title: ")
-			fmt.Scanf("%s", &title)
-			fmt.Print("Enter song artist: ")
-			fmt.Scanf("%s", &artist)
-			fmt.Print("Enter song album: ")
-			fmt.Scanf("%s", &album)
-			playlist.addSong(title, artist, album)
-			fmt.Println("Song added")
-		} else if choice == 2 {
-			playlist.play()
-		} else if choice == 3 {
-			fmt.Println(playlist.nextSong())
-		} else if choice == 4 {
-			fmt.Println(playlist.prevSong())
-		} else if choice == 5 {
-			playlist.print()
-		} else if choice == 6 {
-			title := ""
-			fmt.Print("Enter song title: ")
-			fmt.Scanf("%s", &title)
-			playlist.removeSong(title)
-		} else if choice == 7 {
-			fmt.Println("Goodbye")
-			break
-		} else {
-			fmt.Println("Invalid choice")
-		}
-	}
+	playlist.addSong("The Sign", "Ace of Base", "The Sign")
+	playlist.addSong("Just the way you are", "Bruno Mars", "24K Magic")
+	playlist.addSong("I'm yours", "Bruno Mars", "24K Magic")
+	playlist.print()
+	playlist.play()
+	fmt.Println(playlist.nextSong())
+	fmt.Println(playlist.nextSong())
+	fmt.Println(playlist.prevSong())
+	playlist.removeSong("The Sign")
+	playlist.print()
+
 }
